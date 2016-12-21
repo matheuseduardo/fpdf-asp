@@ -703,16 +703,16 @@ this.SetFont=function SetFont(xfamily , xstyle , xsize)
 		var xi;
 		if (arguments.length<3) {xlink=""};
 
-		xcw=this.CurrentFont["cw"];
-		xw=(this.w)-(this.rMargin)-(this.x);
-		xwmax=(xw-2*this.cMargin)*1000/this.FontSize;
-		xs=lib.str_replace("\r","",xtxt);
-		xnb=lib.strlen(xs);
-		xsep=-1;
-		xi=0;
-		xj=0;
-		xl=0;
-		xnl=1;
+		var xcw=this.CurrentFont["cw"];
+		var xw=(this.w)-(this.rMargin)-(this.x);
+		var xwmax=(xw-2*this.cMargin)*1000/this.FontSize;
+		var xs=lib.str_replace("\r","",xtxt);
+		var xnb=lib.strlen(xs);
+		var xsep=-1;
+		var xi=0;
+		var xj=0;
+		var xl=0;
+		var xnl=1;
 		while(xi<xnb)
 			{
 			xc=xs.charAt(xi)
@@ -738,7 +738,7 @@ this.SetFont=function SetFont(xfamily , xstyle , xsize)
 				xls=xl;
 				}
 
-			xl+=(xcw[xs.charAt(xc)]);
+			xl+=(xcw[xs.charAt(xi)]);
 			if(xl>xwmax)
 				{
 				if(xsep==-1)
@@ -775,7 +775,7 @@ this.SetFont=function SetFont(xfamily , xstyle , xsize)
 				}
 			else {xi++}
 			}
-		if(xi!=xj)this.Cell(xl/1000*this.FontSize,xh,lib.substr(xs,xj,xi),0,0,"",0,xlink);
+		if(xi!=xj)this.Cell(xl/1000*this.FontSize,xh,lib.substr(xs,xj),0,0,"",0,xlink);
 		}
 
 	this.Image=function Image(xfile , xx , xy , xw , xh , xtype , xlink)
