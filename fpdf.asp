@@ -2,7 +2,7 @@
 <script language="jscript" runat="server">
 function FPDF()
 	{
-	this.Version = "1.01 beta"
+	this.Version = "1.02 beta"
 	var PATH;
 	var lib=new clib()
 	var page;
