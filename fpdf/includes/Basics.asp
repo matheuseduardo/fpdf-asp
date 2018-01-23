@@ -182,18 +182,7 @@ this.str_replace=function str_replace(psearchText,preplaceText,poriginalString){
 	replaceText=new String(preplaceText)
 	originalString=new String(poriginalString)
 
-	var strLength = originalString.length;
-	var txtLength = searchText.length;
-	if ((strLength == 0) || (txtLength == 0))
-	{ return originalString; }
-	var i = originalString.indexOf(searchText);
-	if ((!i) && (searchText != originalString.substring(0,txtLength)))
-	{ return originalString; }
-	if (i == -1)
-	{ return originalString; }
-	var newstr = originalString.substring(0,i) + replaceText;
-	if (i+txtLength < strLength) { newstr += this.str_replace(searchText,replaceText,originalString.substring(i+txtLength,strLength)); }
-	return newstr;
+	return originalString.split(searchText).join(replaceText);
 }
 
 this.str_replace1=function str_replace1(psearchText,preplaceText,poriginalString){
