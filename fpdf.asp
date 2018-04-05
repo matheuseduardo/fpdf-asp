@@ -1119,7 +1119,7 @@ this.SetFont=function SetFont(xfamily , xstyle , xsize)
 
 	this._putinfo=function _putinfo()
 		{
-		 this._out("/Producer " + this._textstring("FPDF for ASP v." + this.Version + " by Lorenzo Abbati [www.aspxnet.it]"));
+		 this._out("/Producer " + this._textstring("FPDF for ASP v." + this.Version + " [more at https://github.com/matheuseduardo/fpdf-asp]"));
 		if(!lib.empty(this.title))this._out("/Title " + this._textstring(this.title));
 		if(!lib.empty(this.subject))this._out("/Subject " + this._textstring(this.subject));
 		if(!lib.empty(this.author))this._out("/Author " + this._textstring(this.author));
